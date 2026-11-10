@@ -1,0 +1,12 @@
+# pnpm project settings (pnpm v10+ reads project config from here, not package.json)
+
+# Security: pnpm blocks dependency lifecycle (install) scripts by default.
+# pnpm v12 consolidates build-script approval into a single `allowBuilds` map
+# of { package-name: true | false }. Only the packages set to `true` below are
+# permitted to run build scripts. These are the Angular build toolchain
+# packages that require native binaries.
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  lmdb: true
+  msgpackr-extract: true
